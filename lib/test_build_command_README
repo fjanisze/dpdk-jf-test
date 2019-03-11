@@ -1,0 +1,5 @@
+Make sure to build the lib with make, copy the *.a file into the current directory and then execute this command to generate the test binary:
+
+gcc -Wl,--whole-archive -ldpdk -Wl,--no-whole-archive -lmlx4 -lmlx5 -lm -libverbs -lrte_eal -ldpdk -L. -lpthread -lnuma -ldl test.c -ljftest -o test
+
+run sudo ./test to start capturing from the PORT_NBR port.
